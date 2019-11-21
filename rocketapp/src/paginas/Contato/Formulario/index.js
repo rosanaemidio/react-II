@@ -1,5 +1,6 @@
 import React from 'react'
-import Grupo from './Grupo'
+import Grupo from './componentes/Grupo'
+import Botao from './componentes/Botao'
 
 
 class Formulario extends React.Component{
@@ -33,7 +34,29 @@ class Formulario extends React.Component{
             }
         })
     }
+    //Toda vez que mudar o state, o render atualiza. E por isso, faço essa verificação p/ ver se o botão está desabilitado ou habilitado
+    estaDesabilitado = () => {
+        return(
+            !this.state.nome.valor ||
+            this.state.nome.erro ||
+            !this.state.email.valor ||
+            this.state.email.erro ||
+            !this.state.pais.valor ||
+            this.state.pais.erro
+        )
+    }
+    handleSubmit = () =>{
+        const novoContato = {
+            nome : this.state.nome.valor,
+            email: this.state.email.valor,
+            pais: this.state.email.valor,
+            mensagem: this.state.mensagem.valor
+        }
+        console.log(novoContato, 'enviou')
+    }
+
     render(){
+        const verificaBotao = this.estaDesabilitado()
         return(
             <div className='pagina'>
                 <h2>Entre em contato conosco!</h2>
@@ -83,6 +106,15 @@ class Formulario extends React.Component{
 
                          />
                     </Grupo>
+                    <Botao 
+                        desabilitado={verificaBotao}
+                        mudaConteudo={this.props.mudaConteudo}
+                        onSubmit={this.handleSubmit}
+                        pagina='sucesso'
+                        type='submit'
+                        >
+                            Enviar
+                    </Botao>
                 </form>
 
             </div>

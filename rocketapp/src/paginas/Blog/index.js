@@ -38,7 +38,7 @@ class Blog extends React.Component{
                         ? this.state.posts.map(post => {
                         return <Postagens post={post} key={post.id}/>
                     })
-                    : <span>Carregando mensagens :D </span>
+                    : <span>Carregando ... </span>
                 }
                 </section>
             </main>

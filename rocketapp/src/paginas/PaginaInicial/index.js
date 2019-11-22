@@ -4,7 +4,10 @@ import Header from '../../componentes/Header'
 function PaginaInicial (){
     return(
         <main>
-        <Header />    
+        <Header 
+        classe='home-header'
+        tituloPagina= 'A era da comunicação intergalática!'        
+        />    
 
         </main>
     )

@@ -41,7 +41,12 @@ class Menu extends React.Component{
                 </li>
                 <li>
                 <Link to='/chat' className='navbar-links__ativos'>                  
-                    Mensagens
+                    Chat
+                </Link>
+                </li>
+                <li>
+                <Link to='/blog' className='navbar-links__ativos'>                  
+                    Blog
                 </Link>
                 </li>
 

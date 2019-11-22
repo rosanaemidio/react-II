@@ -11,3 +11,20 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+.chat-header {
+    background-image: url('../../imagens/gato.jpg');
+    min-height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0;
+}

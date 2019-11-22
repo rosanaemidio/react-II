@@ -1,8 +1,9 @@
 import React from 'react'
-import { getMensagens } from '../../service/base'
+import { getMensagens } from '../../service/mensagens'
 
 import './styles.css'
 import Mensagem from './componentes'
+import Header from '../../componentes/Header'
 
 class Chat extends React.Component{
     constructor(props){
@@ -26,15 +27,20 @@ class Chat extends React.Component{
 
     render(){
         return(
-            <section className='chat'>
-                <h2>Mensagens</h2>
-                {this.state.mensagens.length > 0
-                    ? this.state.mensagens.map(mensagem => {
-                    return <Mensagem mensagem={mensagem} key={mensagem.id}/>
-                })
-                : <span>Carregando mensagens :D </span>
-            }
-            </section>
+            <main>
+                <Header
+                classe= 'chat-header'
+                tituloPagina= 'Mensagens'
+                />
+                <section className='chat'>
+                    {this.state.mensagens.length > 0
+                        ? this.state.mensagens.map(mensagem => {
+                        return <Mensagem mensagem={mensagem} key={mensagem.id}/>
+                    })
+                    : <span>Carregando mensagens :D </span>
+                }
+                </section>
+            </main>
         )
     }
 }
